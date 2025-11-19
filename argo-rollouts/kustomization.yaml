@@ -4,5 +4,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - install.yaml
-- gateway-api-plugin.yaml
 - clusterrole.yaml
+
+patchesStrategicMerge:
+- gateway-api-plugin.yaml
