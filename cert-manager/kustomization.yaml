@@ -4,4 +4,6 @@ kind: Kustomization
 resources:
 - cert-manager.yaml
 - clusterissuer.yaml
+
+patchesStrategicMerge:
 - namespace.yaml
