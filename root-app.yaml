@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/Alt3rius/argo-rollouts-app.git
     targetRevision: HEAD
-    path: argocd/base
+    path: .
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
