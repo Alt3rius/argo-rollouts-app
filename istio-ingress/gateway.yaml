@@ -1,0 +1,66 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: ingress-gateway
+  namespace: istio-ingress
+spec:
+  gatewayClassName: istio
+  addresses:
+  - value: istio-ingress.istio-ingress.svc.cluster.local
+    type: Hostname
+  listeners:
+  - name: http-root
+    port: 80
+    protocol: HTTP
+    hostname: "alterai.pl"
+    allowedRoutes:
+      namespaces:
+        from: All
+  - name: https-root
+    port: 443
+    protocol: HTTPS
+    hostname: "alterai.pl"
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: alterai-pl-tls
+  - name: http-wildcard
+    port: 80
+    protocol: HTTP
+    hostname: "*.alterai.pl"
+    allowedRoutes:
+      namespaces:
+        from: All
+  - name: https-wildcard
+    port: 443
+    protocol: HTTPS
+    hostname: "*.alterai.pl"
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: alterai-pl-tls
+  - name: http
+    port: 80
+    protocol: HTTP
+    hostname: "*.serving.alterai.pl"
+    allowedRoutes:
+      namespaces:
+        from: All
+  - name: https
+    port: 443
+    protocol: HTTPS
+    hostname: "*.serving.alterai.pl"
+    allowedRoutes:
+      namespaces:
+        from: All
+    tls:
+      mode: Terminate
+      certificateRefs:
+      - name: alterai-pl-tls
+
