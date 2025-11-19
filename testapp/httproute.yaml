@@ -11,7 +11,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /  
+        value: /
     backendRefs:
     - name: argo-rollouts-stable-service
       kind: Service
