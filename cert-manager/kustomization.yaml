@@ -5,5 +5,5 @@ resources:
 - cert-manager.yaml
 - clusterissuer.yaml
 
-patchesStrategicMerge:
-- namespace.yaml
+# patchesStrategicMerge:
+# - namespace.yaml
