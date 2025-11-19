@@ -16,17 +16,17 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
-  - name: https-root
-    port: 443
-    protocol: HTTPS
-    hostname: "alterai.pl"
-    allowedRoutes:
-      namespaces:
-        from: All
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: alterai-pl-tls
+  # - name: https-root
+  #   port: 443
+  #   protocol: HTTPS
+  #   hostname: "alterai.pl"
+  #   allowedRoutes:
+  #     namespaces:
+  #       from: All
+  #   tls:
+  #     mode: Terminate
+  #     certificateRefs:
+  #     - name: alterai-pl-tls
   - name: http-wildcard
     port: 80
     protocol: HTTP
@@ -34,17 +34,17 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
-  - name: https-wildcard
-    port: 443
-    protocol: HTTPS
-    hostname: "*.alterai.pl"
-    allowedRoutes:
-      namespaces:
-        from: All
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: alterai-pl-tls
+  # - name: https-wildcard
+  #   port: 443
+  #   protocol: HTTPS
+  #   hostname: "*.alterai.pl"
+  #   allowedRoutes:
+  #     namespaces:
+  #       from: All
+  #   tls:
+  #     mode: Terminate
+  #     certificateRefs:
+  #     - name: alterai-pl-tls
   - name: http
     port: 80
     protocol: HTTP
@@ -52,15 +52,15 @@ spec:
     allowedRoutes:
       namespaces:
         from: All
-  - name: https
-    port: 443
-    protocol: HTTPS
-    hostname: "*.serving.alterai.pl"
-    allowedRoutes:
-      namespaces:
-        from: All
-    tls:
-      mode: Terminate
-      certificateRefs:
-      - name: alterai-pl-tls
+  # - name: https
+  #   port: 443
+  #   protocol: HTTPS
+  #   hostname: "*.serving.alterai.pl"
+  #   allowedRoutes:
+  #     namespaces:
+  #       from: All
+  #   tls:
+  #     mode: Terminate
+  #     certificateRefs:
+  #     - name: alterai-pl-tls
 
