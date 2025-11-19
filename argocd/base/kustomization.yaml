@@ -9,5 +9,5 @@ resources:
 - httproute.yaml
 
 patchesStrategicMerge:
-- patches/disable-tls.yaml
+# - patches/disable-tls.yaml
 - patches/rollout-extension.yaml
